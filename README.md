@@ -1,16 +1,99 @@
-# flutter_chat
+# Very Simple Chat
 
-A new Flutter project.
+Простой общий чат на Flutter с использованием Firebase.
 
-## Getting Started
+## Функциональность
+- Авторизация через Firebase Auth
+- Общий чат в реальном времени
+- Мультипользовательский режим
+- Хранение истории сообщений
+- Чистый интерфейс с Material Design
 
-This project is a starting point for a Flutter application.
+## Архитектура
 
-A few resources to get you started if this is your first Flutter project:
+MVVM + Clean Architecture\
+├── UI (Виджеты)\
+├── BLoC (Управление состоянием)\
+├── Repository/Contracts (Абстракции)\
+└── Services (Firebase, API)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Технологии
+- Flutter 3.x
+- Firebase (Auth, Firestore)
+- BLoC для state management
+- Provider для dependency injection
+
+## Структура проекта
+
+lib/\
+├── main.dart\
+├── contracts/\
+├── bloc/\
+│ ├── chat_bloc.dart\
+│ ├── chat_event.dart\
+│ └── chat_state.dart\
+├── models/\
+│ └── message.dart\
+├── services/\
+│ └── chat_services.dart\
+└── ui/\
+├── auth_page.dart\
+└── chat_page.dart
+
+
+## Важная информация
+**Для безопасности проект не содержит конфигурационных файлов Firebase:**
+- `android/app/google-services.json` - **ОТСУТСТВУЕТ** в репозитории
+- Ключи API хранятся в переменных окружения
+- Настройте свой Firebase проект для запуска
+
+## Запуск проекта
+1. **Клонируйте репозиторий:**
+```bash
+git clone https://github.com/FedorPRG/very_simple_chat.git
+cd very_simple_chat
+```
+
+2. **Настройте Firebase:**
+
+- Создайте проект в Firebase Console
+
+- Добавьте Android приложение
+
+- Скачайте google-services.json
+
+- Поместите его в android/app/
+
+3. **Включите сервисы в Firebase Console:**
+
+- Authentication → Email/Password
+
+- Firestore Database → создать базу в режиме тестирования
+
+4. **Установите зависимости:**
+
+```bash
+flutter pub get
+```
+5. **Запустите приложение:**
+
+```bash
+flutter run
+```
+## Сборка APK
+Для тестирования можно собрать релизную версию:
+
+```bash
+flutter build apk --release
+```
+APK файл будет создан в: build/app/outputs/flutter-apk/app-release.apk
+
+## Безопасность
+- API ключи не коммитятся в репозиторий
+
+- Используется .gitignore для защиты чувствительных данных
+
+- Рекомендуется использовать переменные окружения в production
+
+**Примечание: Если хотите посмотреть рабочее приложение, могу предоставить APK файл. Конфигурационные данные Firebase не включены в репозиторий по соображениям безопасности.**
