@@ -10,13 +10,13 @@
 - Чистый интерфейс с Material Design
 
 ## Архитектура
-
-MVVM + Clean Architecture\
-├── UI (Виджеты)\
-├── BLoC (Управление состоянием)\
-├── Repository/Contracts (Абстракции)\
-└── Services (Firebase, API)
-
+```
+BLoC Pattern + Clean Architecture
+├── Presentation Layer (UI Widgets)
+├── Business Logic Layer (BLoC)
+├── Domain Layer (Contracts/Interfaces)
+└── Data Layer (Services, Firebase)
+```
 
 ## Технологии
 - Flutter 3.x
@@ -25,22 +25,23 @@ MVVM + Clean Architecture\
 - Provider для dependency injection
 
 ## Структура проекта
-
-lib/\
-├── main.dart\
-├── contracts/\
-├── bloc/\
-│ ├── chat_bloc.dart\
-│ ├── chat_event.dart\
-│ └── chat_state.dart\
-├── models/\
-│ └── message.dart\
-├── services/\
-│ └── chat_services.dart\
-└── ui/\
-├── auth_page.dart\
-└── chat_page.dart
-
+```
+lib/
+├── main.dart
+├── contracts/
+│   └── contracts.dart
+├── bloc/
+│   ├── chat_bloc.dart
+│   ├── chat_event.dart
+│   └── chat_state.dart
+├── models/
+│   └── message.dart
+├── services/
+│   └── chat_services.dart
+└── ui/
+    ├── auth_page.dart
+    └── chat_page.dart
+```
 
 ## Важная информация
 **Для безопасности проект не содержит конфигурационных файлов Firebase:**
