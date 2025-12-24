@@ -99,6 +99,13 @@ class _MessageBubble extends StatelessWidget {
               ),
               SizedBox(height: 4),
               Text(
+                '${message.timestamp.day.toString().padLeft(2, '0')}.${message.timestamp.month.toString().padLeft(2, '0')}.${message.timestamp.year.toString().padLeft(2, '0')}',
+                style: TextStyle(
+                  fontSize: 10,
+                  color: isMe ? Colors.white70 : Colors.grey[600],
+                ),
+              ),
+              Text(
                 '${message.timestamp.hour.toString().padLeft(2, '0')}:${message.timestamp.minute.toString().padLeft(2, '0')}',
                 style: TextStyle(
                   fontSize: 10,
